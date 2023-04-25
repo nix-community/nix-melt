@@ -3,13 +3,13 @@ name = "nix-melt"
 version = "0.1.0"
 authors = ["figsoda <figsoda@pm.me>"]
 edition = "2021"
-description = ""
+description = "A ranger-like flake.lock viewer"
 readme = "README.md"
 homepage = "https://github.com/nix-community/nix-melt"
 repository = "https://github.com/nix-community/nix-melt"
 license = "MPL-2.0"
-keywords = []
-categories = []
+keywords = ["cli", "flake", "nix", "tui", "viewer"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 color-eyre = "0.6.2"
