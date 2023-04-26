@@ -58,14 +58,14 @@
               installShellFiles
             ];
 
+            env = {
+              GEN_ARTIFACTS = "artifacts";
+            };
+
             postInstall = ''
               installManPage artifacts/nix-melt.1
               installShellCompletion artifacts/nix-melt.{bash,fish} --zsh artifacts/_nix-melt
             '';
-
-            env = {
-              GEN_ARTIFACTS = "artifacts";
-            };
 
             meta = {
               license = licenses.mpl20;
