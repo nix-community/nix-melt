@@ -79,14 +79,17 @@ impl Pane {
             items.extend([
                 ListItem::new(""),
                 ListItem::new(format!("type: {}", locked.type_)),
-                ListItem::new(format!(
-                    "{}: {}",
-                    "lastModified",
-                    OffsetDateTime::from_unix_timestamp(locked.last_modified as i64)?
+            ]);
+
+            if let Some(time) = locked.last_modified {
+                items.push(ListItem::new(format!(
+                    "lastModified: {}",
+                    OffsetDateTime::from_unix_timestamp(time as i64)?
                         .to_offset(offset)
                         .format(time_format)?,
-                )),
-            ]);
+                )));
+            }
+
             items.extend(
                 locked
                     .fields
