@@ -2,6 +2,7 @@ use std::hash::BuildHasherDefault;
 
 use eyre::{eyre, Result};
 use indexmap::IndexMap;
+use parse_display::Display;
 use rustc_hash::FxHasher;
 use serde::Deserialize;
 use serde_with::{serde_as, Map};
@@ -40,7 +41,16 @@ pub(crate) struct Locked {
     pub last_modified: usize,
     #[serde(flatten)]
     #[serde_as(as = "Map<_, _>")]
-    pub fields: Vec<(String, String)>,
+    pub fields: Vec<(String, Value)>,
+}
+
+#[derive(Deserialize, Display)]
+#[serde(untagged)]
+#[display("{0}")]
+pub enum Value {
+    String(String),
+    Bool(bool),
+    Int(i64),
 }
 
 impl Resolve {
