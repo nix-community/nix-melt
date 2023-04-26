@@ -37,9 +37,14 @@
             "Cargo\\.(toml|lock)"
             "build.rs"
           ];
+
+          inherit (pkgs)
+            installShellFiles
+            rustPlatform
+            ;
         in
         {
-          default = pkgs.rustPlatform.buildRustPackage {
+          default = rustPlatform.buildRustPackage {
             pname = "nix-melt";
             inherit ((importTOML (src + "/Cargo.toml")).package) version;
 
@@ -47,6 +52,19 @@
 
             cargoLock = {
               lockFile = src + "/Cargo.lock";
+            };
+
+            nativeBuildInputs = [
+              installShellFiles
+            ];
+
+            postInstall = ''
+              installManPage artifacts/nix-melt.1
+              installShellCompletion artifacts/nix-melt.{bash,fish} --zsh artifacts/_nix-melt
+            '';
+
+            env = {
+              GEN_ARTIFACTS = "artifacts";
             };
 
             meta = {
