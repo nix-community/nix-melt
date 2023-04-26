@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.2
+
+### Fxies
+
+- Make `lastModified` optional ([#1](https://github.com/nix-community/nix-melt/issues/2))
+
 ## v0.1.1 - 2023-04-26
 
 ### Features
