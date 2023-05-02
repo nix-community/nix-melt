@@ -34,8 +34,8 @@
         let
           src = sourceByRegex self [
             "(src|tests)(/.*)?"
-            "Cargo\\.(toml|lock)"
-            "build.rs"
+            ''Cargo\.(toml|lock)''
+            ''build\.rs''
           ];
 
           inherit (pkgs)
