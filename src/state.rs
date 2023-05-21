@@ -44,7 +44,7 @@ impl<'a> State<'a> {
     }
 
     pub(crate) fn select(&mut self, f: impl Fn(usize) -> usize) -> Result<()> {
-        let mut pane = &mut self
+        let pane = &mut self
             .panes
             .get_mut(self.current)
             .ok_or(IndexOutOfBounds(self.current))?;
