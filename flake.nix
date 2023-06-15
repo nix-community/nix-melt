@@ -25,11 +25,6 @@
     {
       formatter = eachSystem (pkgs: pkgs.nixpkgs-fmt);
 
-      herculesCI.ciSystems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
-
       packages = eachSystem (pkgs:
         let
           src = sourceByRegex self [
