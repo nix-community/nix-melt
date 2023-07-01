@@ -1,6 +1,6 @@
-use clap::Parser;
-
 use std::path::PathBuf;
+
+use clap::Parser;
 
 /// A ranger-like flake.lock viewer
 /// {n}https://github.com/nix-community/nix-melt
