@@ -30,7 +30,10 @@ fn main() -> Result<()> {
     state.render()?;
 
     while let Ok(ev) = event::read() {
-        let Event::Key(KeyEvent { code, modifiers, .. }) = ev else {
+        let Event::Key(KeyEvent {
+            code, modifiers, ..
+        }) = ev
+        else {
             continue;
         };
 
