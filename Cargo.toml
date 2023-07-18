@@ -28,7 +28,7 @@ version = "4.3.12"
 features = ["cargo", "derive", "unicode", "wrap_help"]
 
 [dependencies.ratatui]
-version = "0.21.0"
+version = "0.22.0"
 default-features = false
 features = ["crossterm"]
 
