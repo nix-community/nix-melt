@@ -13,7 +13,7 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 color-eyre = "0.6.2"
-crossterm = "0.26.1"
+crossterm = "0.27.0"
 eyre = "0.6.8"
 indexmap = { version = "2.0.0", features = ["serde"] }
 parse-display = "0.8.2"
