@@ -24,7 +24,7 @@ serde_with = "3.3.0"
 thiserror = "1.0.47"
 
 [dependencies.clap]
-version = "4.4.0"
+version = "4.4.1"
 features = ["cargo", "derive", "unicode", "wrap_help"]
 
 [dependencies.ratatui]
@@ -37,7 +37,7 @@ version = "0.3.27"
 features = ["formatting", "local-offset", "serde"]
 
 [build-dependencies]
-clap = { version = "4.4.0", features = ["derive"] }
+clap = { version = "4.4.1", features = ["derive"] }
 clap_complete = "4.4.0"
 clap_mangen = "0.2.13"
 
