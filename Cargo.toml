@@ -33,7 +33,7 @@ default-features = false
 features = ["crossterm"]
 
 [dependencies.time]
-version = "0.3.29"
+version = "0.3.30"
 features = ["formatting", "local-offset", "serde"]
 
 [build-dependencies]
