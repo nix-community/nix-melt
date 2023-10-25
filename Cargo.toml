@@ -39,7 +39,7 @@ features = ["formatting", "local-offset", "serde"]
 [build-dependencies]
 clap = { version = "4.4.7", features = ["derive"] }
 clap_complete = "4.4.3"
-clap_mangen = "0.2.14"
+clap_mangen = "0.2.15"
 
 [profile.release]
 lto = true
