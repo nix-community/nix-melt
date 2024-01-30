@@ -466,9 +466,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.1.0"
+version = "2.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d530e1a18b1cb4c484e6e34556a0d948706958449fca0cab753d649f2bce3d1f"
+checksum = "433de089bd45971eecf4668ee0ee8f4cec17db4f8bd8f7bc3197a6ce37aa7d9b"
 dependencies = [
  "equivalent",
  "hashbrown 0.14.1",
@@ -576,7 +576,7 @@ dependencies = [
  "color-eyre",
  "crossterm",
  "eyre",
- "indexmap 2.1.0",
+ "indexmap 2.2.1",
  "parse-display",
  "ratatui",
  "rustc-hash",
@@ -856,7 +856,7 @@ dependencies = [
  "chrono",
  "hex",
  "indexmap 1.9.3",
- "indexmap 2.1.0",
+ "indexmap 2.2.1",
  "serde",
  "serde_json",
  "serde_with_macros",
