@@ -73,7 +73,7 @@ impl Lock {
         Ok(Resolve {
             root: self
                 .nodes
-                .remove(&self.root)
+                .swap_remove(&self.root)
                 .ok_or_else(|| eyre!("no root node"))?,
             nodes: self.nodes,
         })

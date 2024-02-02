@@ -1,6 +1,5 @@
 use eyre::Result;
 use ratatui::{
-    backend::Backend,
     layout::Rect,
     style::{Color, Modifier, Style},
     widgets::{List, ListItem, ListState},
@@ -113,12 +112,7 @@ impl Pane {
         })
     }
 
-    pub(crate) fn render(
-        &self,
-        frame: &mut Frame<impl Backend>,
-        rect: Rect,
-        middle: bool,
-    ) -> ListState {
+    pub(crate) fn render(&self, frame: &mut Frame, rect: Rect, middle: bool) -> ListState {
         let mut state = self.state.clone();
         frame.render_stateful_widget(
             if middle {
