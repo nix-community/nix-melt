@@ -21,7 +21,7 @@ rustc-hash = "1.1.0"
 serde = { version = "1.0.196", features = ["derive"] }
 serde_json = "1.0.113"
 serde_with = "3.6.1"
-thiserror = "1.0.56"
+thiserror = "1.0.58"
 
 [dependencies.clap]
 version = "4.4.18"
