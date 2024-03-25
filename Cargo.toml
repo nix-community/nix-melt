@@ -15,7 +15,7 @@ categories = ["command-line-utilities"]
 color-eyre = "0.6.2"
 crossterm = "0.27.0"
 eyre = "0.6.12"
-indexmap = { version = "2.2.2", features = ["serde"] }
+indexmap = { version = "2.2.6", features = ["serde"] }
 parse-display = "0.9.0"
 rustc-hash = "1.1.0"
 serde = { version = "1.0.196", features = ["derive"] }
