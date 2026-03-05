@@ -1,12 +1,12 @@
-use std::io::{stdout, Stdout};
+use std::io::{Stdout, stdout};
 
 use crossterm::{
-    terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
     ExecutableCommand,
+    terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
 };
 use eyre::Result;
-use ratatui::{backend::CrosstermBackend, layout::Rect, Terminal};
-use time::{format_description::FormatItem, UtcOffset};
+use ratatui::{Terminal, backend::CrosstermBackend, layout::Rect};
+use time::{UtcOffset, format_description::FormatItem};
 
 use crate::{
     error::{IndexOutOfBounds, InvalidInput},

@@ -1,11 +1,11 @@
 use std::hash::BuildHasherDefault;
 
-use eyre::{eyre, Result};
+use eyre::{Result, eyre};
 use indexmap::IndexMap;
 use parse_display::Display;
 use rustc_hash::FxHasher;
 use serde::Deserialize;
-use serde_with::{serde_as, Map};
+use serde_with::{Map, serde_as};
 
 pub(crate) struct Resolve {
     pub root: Node,
