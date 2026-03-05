@@ -40,11 +40,9 @@ fn main() -> Result<()> {
         match code {
             KeyCode::Char('q') => break,
             KeyCode::Char('c') if modifiers == KeyModifiers::CONTROL => break,
-            KeyCode::Char('h') | KeyCode::Left => {
-                if state.current != 0 {
-                    state.current -= 1;
-                    state.render()?;
-                }
+            KeyCode::Char('h') | KeyCode::Left if state.current != 0 => {
+                state.current -= 1;
+                state.render()?;
             }
             KeyCode::Char('j') | KeyCode::Down => {
                 state.select(|i| i + 1)?;
@@ -52,11 +50,9 @@ fn main() -> Result<()> {
             KeyCode::Char('k') | KeyCode::Up => {
                 state.select(|i| i.saturating_sub(1))?;
             }
-            KeyCode::Char('l') | KeyCode::Right => {
-                if state.current + 1 < state.panes.len() {
-                    state.current += 1;
-                    state.render()?;
-                }
+            KeyCode::Char('l') | KeyCode::Right if state.current + 1 < state.panes.len() => {
+                state.current += 1;
+                state.render()?;
             }
             _ => {}
         }

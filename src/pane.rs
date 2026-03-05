@@ -1,11 +1,11 @@
 use eyre::Result;
 use ratatui::{
+    Frame,
     layout::Rect,
     style::{Color, Modifier, Style},
     widgets::{List, ListItem, ListState},
-    Frame,
 };
-use time::{format_description::FormatItem, OffsetDateTime, UtcOffset};
+use time::{OffsetDateTime, UtcOffset, format_description::FormatItem};
 
 use crate::{
     error::InvalidInput,
@@ -113,7 +113,7 @@ impl Pane {
     }
 
     pub(crate) fn render(&self, frame: &mut Frame, rect: Rect, middle: bool) -> ListState {
-        let mut state = self.state.clone();
+        let mut state = self.state;
         frame.render_stateful_widget(
             if middle {
                 self.widget
