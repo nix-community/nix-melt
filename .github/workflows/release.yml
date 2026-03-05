@@ -4,18 +4,11 @@ on:
   push:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: The existing tag to publish to FlakeHub
-        type: string
-        required: true
 
 jobs:
   create_release:
     name: create_release
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_dispatch'
     steps:
       - name: Create release
         uses: softprops/action-gh-release@v2
@@ -26,7 +19,6 @@ jobs:
     name: release
     needs: create_release
     runs-on: ${{ matrix.os }}
-    if: github.event_name != 'workflow_dispatch'
     strategy:
       matrix:
         include:
@@ -66,7 +58,6 @@ jobs:
     name: artifacts
     needs: create_release
     runs-on: ubuntu-latest
-    if: github.event_name != 'workflow_dispatch'
 
     steps:
       - name: Checkout
@@ -91,18 +82,3 @@ jobs:
           tag: ${{ github.ref }}
           file: artifacts/*
           file_glob: true
-
-  flakehub:
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.tag != null && format('refs/tags/{0}', inputs.tag) || '' }}
-      - uses: DeterminateSystems/nix-installer-action@v14
-      - uses: DeterminateSystems/flakehub-push@v5
-        with:
-          visibility: public
-          tag: ${{ inputs.tag }}
