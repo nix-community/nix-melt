@@ -17,7 +17,7 @@ crossterm = "0.29.0"
 eyre = "0.6.12"
 indexmap = { version = "2.13.0", features = ["serde"] }
 parse-display = "0.10.0"
-rustc-hash = "2.1.1"
+rustc-hash = "2.1.2"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
 serde_with = "3.18.0"
