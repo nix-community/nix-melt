@@ -15,7 +15,7 @@ categories = ["command-line-utilities"]
 color-eyre = "0.6.5"
 crossterm = "0.29.0"
 eyre = "0.6.12"
-indexmap = { version = "2.13.1", features = ["serde"] }
+indexmap = { version = "2.14.0", features = ["serde"] }
 parse-display = "0.10.0"
 rustc-hash = "2.1.2"
 serde = { version = "1.0.228", features = ["derive"] }
@@ -38,7 +38,7 @@ features = ["formatting", "local-offset", "serde"]
 
 [build-dependencies]
 clap = { version = "4.6.0", features = ["derive"] }
-clap_complete = "4.6.0"
+clap_complete = "4.6.2"
 clap_mangen = "0.3.0"
 
 [profile.release]
