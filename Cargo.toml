@@ -20,7 +20,7 @@ parse-display = "0.11.0"
 rustc-hash = "2.1.2"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
-serde_with = "3.19.0"
+serde_with = "3.20.0"
 thiserror = "2.0.18"
 
 [dependencies.clap]
@@ -38,7 +38,7 @@ features = ["formatting", "local-offset", "serde"]
 
 [build-dependencies]
 clap = { version = "4.6.1", features = ["derive"] }
-clap_complete = "4.6.3"
+clap_complete = "4.6.5"
 clap_mangen = "0.3.0"
 
 [profile.release]
