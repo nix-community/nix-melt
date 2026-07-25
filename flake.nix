@@ -70,5 +70,7 @@
           };
         }
       );
+
+      checks = self.packages;
     };
 }
